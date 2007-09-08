@@ -1,45 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
 <html>
-<head>
-<title>Project Home Page</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-</head>
+  <head>
+    <title>JAX-WS commons - Efficient handling of MIME attachments</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <!-- TODO: move this into JavaScript to patch the skin
+      <div class="xright">      <a href="http://jax-ws.dev.java.net/">JAX-WS</a>
+          |
+          <a href="http://glassfishi.dev.java.net/">Glassfish</a>
+      </div>
+    -->
+    <div id="leftColumn">
+      <div id="navcolumn">
+             <dl class=navgroup>
+        <dt>JAX-WS Spring extension</dt>
+        <dd><ul>
+              
+    <li class="none">
+              <strong>Introduction</strong>
+        </li>
+              
+    <li class="none">
+              <a href="https://maven2-repository.dev.java.net/source/browse/maven2-repository/trunk/www/repository/org/jvnet/jax-ws-commons/spring/jaxws-spring/">Download</a>
+        </li>
+              
+          
+              
+      
+            
+      
+            
+      
+              
+        <li class="expanded">
+              <a href="reference.html">Reference</a>
+                <ul>
+                  
+    <li class="none">
+              <a href="references/spring-jax-ws-core.xsd.html">Common</a>
+        </li>
+                  
+    <li class="none">
+              <a href="references/spring-jax-ws-servlet.xsd.html">Servlet</a>
+        </li>
+                  
+    <li class="none">
+              <a href="references/spring-jax-ws-local-transport.xsd.html">Local Transport</a>
+        </li>
+              </ul>
+        </li>
+          </ul></dd>
+    </dl>
+      <dl class=navgroup>
+        <dt>How-to configure...</dt>
+        <dd><ul>
+              
+    <li class="none">
+              <a href="handler.html">Handler</a>
+        </li>
+              
+    <li class="none">
+              <a href="local-transport.html">Local Transport</a>
+        </li>
+              
+    <li class="none">
+              <a href="aop.html">AOP</a>
+        </li>
+          </ul></dd>
+    </dl>
+      <dl class=navgroup>
+        <dt>Project Documentation</dt>
+        <dd><ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+              <a href="project-info.html">Project Information</a>
+              </li>
+          </ul></dd>
+    </dl>
+        </div>
+      <script>
+        // replace the java.net project tools with the navigation bar from Maven.
+        // also get rid of "Get Involved" thingie too, while we are at it
+        var pt = document.getElementById("projecttools");
+        var nv = document.getElementById("navcolumn");
+        
+        while(pt.previousSibling!=null)
+          pt.parentNode.removeChild(pt.previousSibling);
+        
+        pt.parentNode.insertBefore(nv,pt);
+        pt.parentNode.removeChild(pt);
+      </script>
+      <script>
+        // kill "description" h3 bar
+        var ld = document.getElementById("longdescription");
+        if(ld!=null) {
+          for( n=ld.firstChild; n!=null; n=n.nextSibling ) {
+            if(n.nodeType==1 && n.innerHTML=="Description" ) {
+              n.parentNode.removeChild(n);
+              break;
+            }
+          }
+        }
+      </script>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2>What is this?</h2><p>This provides a streaming API to access attachments parts in a MIME message. Often times, a large MIME message cannot be loaded into memory. Hence the whole message or attachment parts are written to a file system and access to the attachment parts is provided using those files.</p><p>But in some cases, the attachment parts can be accessed by applications in a streaming fashion, provided: - The parts are accessed orderly(as they appear in the stream) - The parts are accessed only once. In such situations, the parts need not be written to file system(however large message it is !)</p></div><div class="section"><h2>Sample Usage</h2><div class="source"><pre>// Parts are accessed in order. The data is accessed using readOnce()
+// and there shouldn't be any data stored in temp files.
+public void testOrder() {
+    InputStream in = ...
+    String boundary = ...
+    MIMEConfig config = ...
+    MIMEMessage mm = new MIMEMessage(in, boundary, config);
 
-<body bgcolor="#FFFFFF" text="#000000">
-<h1>Default project home page </h1>
-<p>Congratulations on your new java.net project! </p>
-<p>This page is the home page for your new project. This content is appearing 
-  because you have selected the option <b>Use project index.html</b>. To edit 
-  the information displayed on this page, just use CVS to check out your project's 
-  CVS repository and edit index.html in directory www. You can get more information 
-  on how to set-up your local CVS client, click on <b>Version Control</b> on the 
-  left nav bar. </p>
-<p>If you don't want to use CVS to manage your home page, click on the <b>Edit 
-  project</b> link on this page and unclick the option <b>Use project index.html</b>. 
-  Your project home page contents will be generated from the <b>Edit project</b> 
-  field <b>Description</b>. Edit the text on that field to change your home page 
-  contents. Click on <b>Submit changes</b> to save your edits. </p>
-<p>If you are looking for <a href="https://java-net.dev.java.net/ProjectPages.html#templates">sample 
-  home page templates</a>, check out the <a href="https://java-net.dev.java.net/ProjectPages.html">java.net 
-  Project Starter Kit</a>. Copy either of the templates into your project's html 
-  to get started on your project's home page. </p>
-<p>You can find lots of helpful information in the Starter Kit to get your project 
-  started. Some of the things you will find in there include:</p>
-<ul>
-  <li>Hints on how to <a href="https://java-net.dev.java.net/ProjectPages.html#pages">set-up 
-    your project's</a> home page</li>
-  <li>Ideas on how to <a href="https://java-net.dev.java.net/ProjectPages.html#publicity">publicize 
-    your project</a> including RSS feeds</li>
-  <li>Hints on <a href="https://java-net.dev.java.net/pagedesign.html">project 
-    page HTML</a></li>
-  <li>Setting up project <a href="https://java-net.dev.java.net/ProjectPages.html#wiki">wiki 
-    pages</a></li>
-  <li>And places to go if <a href="https://java-net.dev.java.net/ProjectPages.html#feedback">you 
-    have questions</a>.</li>
-</ul>
-<p>Remember that you will attract more new members and your project team will 
-  work more effectively if you, as the project owner, supply sufficient information 
-  about your project for visitors to your project space. Good luck with your new 
-  project! </p>
-</body>
+    MIMEPart partA = mm.getPart(&quot;partA&quot;);
+    InputStream ais = partA.readOnce();
+
+    MIMEPart partB = mm.getPart(&quot;partB&quot;);
+    InputStream bis = partB.readOnce()
+
+    MIMEPart partC = mm.getPart(&quot;partC&quot;);
+    InputStream cis = partC.readOnce()
+}</pre></div></div><div class="section"><h2>Implementation</h2><p>MIME message parsing is done using pull-parsing, much similar to <a href="http://www.jcp.org/en/jsr/detail?id=173"><tt>StAX</tt></a> in XML world. The MIMEParts are constructed lazily, and parsing is triggered by applications while reading the attachment parts. MIMEConfig provides various configuration options to control parsing and storing MIME parts. It is also possible to read MIME parts in any order and multiple times, but doing so may create attachment parts on the file system.</p></div>
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2007
+    
+          
+  
+
+  
+  
+  &nbsp;| Last Published: 09/07/2007
+  &nbsp;| Version: 1.1-SNAPSHOT
+</div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
 </html>
-
