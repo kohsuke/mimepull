@@ -11,7 +11,7 @@
 
 <html>
   <head>
-    <title>JAX-WS commons - Efficient handling of MIME attachments</title>
+    <title>MIME pull - Efficient handling of MIME attachments</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -27,117 +27,6 @@
           <a href="http://glassfishi.dev.java.net/">Glassfish</a>
       </div>
     -->
-    <div id="leftColumn">
-      <div id="navcolumn">
-             <dl class=navgroup>
-        <dt>JAX-WS Spring extension</dt>
-        <dd><ul>
-              
-    <li class="none">
-              <strong>Introduction</strong>
-        </li>
-              
-    <li class="none">
-              <a href="https://maven2-repository.dev.java.net/source/browse/maven2-repository/trunk/www/repository/org/jvnet/jax-ws-commons/spring/jaxws-spring/">Download</a>
-        </li>
-              
-          
-              
-      
-            
-      
-            
-      
-              
-        <li class="expanded">
-              <a href="reference.html">Reference</a>
-                <ul>
-                  
-    <li class="none">
-              <a href="references/spring-jax-ws-core.xsd.html">Common</a>
-        </li>
-                  
-    <li class="none">
-              <a href="references/spring-jax-ws-servlet.xsd.html">Servlet</a>
-        </li>
-                  
-    <li class="none">
-              <a href="references/spring-jax-ws-local-transport.xsd.html">Local Transport</a>
-        </li>
-              </ul>
-        </li>
-          </ul></dd>
-    </dl>
-      <dl class=navgroup>
-        <dt>How-to configure...</dt>
-        <dd><ul>
-              
-    <li class="none">
-              <a href="handler.html">Handler</a>
-        </li>
-              
-    <li class="none">
-              <a href="local-transport.html">Local Transport</a>
-        </li>
-              
-    <li class="none">
-              <a href="aop.html">AOP</a>
-        </li>
-          </ul></dd>
-    </dl>
-      <dl class=navgroup>
-        <dt>Project Documentation</dt>
-        <dd><ul>
-              
-                
-              
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-            
-      
-              
-        <li class="collapsed">
-              <a href="project-info.html">Project Information</a>
-              </li>
-          </ul></dd>
-    </dl>
-        </div>
-      <script>
-        // replace the java.net project tools with the navigation bar from Maven.
-        // also get rid of "Get Involved" thingie too, while we are at it
-        var pt = document.getElementById("projecttools");
-        var nv = document.getElementById("navcolumn");
-        
-        while(pt.previousSibling!=null)
-          pt.parentNode.removeChild(pt.previousSibling);
-        
-        pt.parentNode.insertBefore(nv,pt);
-        pt.parentNode.removeChild(pt);
-      </script>
-      <script>
-        // kill "description" h3 bar
-        var ld = document.getElementById("longdescription");
-        if(ld!=null) {
-          for( n=ld.firstChild; n!=null; n=n.nextSibling ) {
-            if(n.nodeType==1 && n.innerHTML=="Description" ) {
-              n.parentNode.removeChild(n);
-              break;
-            }
-          }
-        }
-      </script>
-    </div>
     <div id="bodyColumn">
       <div id="contentBox">
         <div class="section"><h2>What is this?</h2><p>This provides a streaming API to access attachments parts in a MIME message. Often times, a large MIME message cannot be loaded into memory. Hence the whole message or attachment parts are written to a file system and access to the attachment parts is provided using those files.</p><p>But in some cases, the attachment parts can be accessed by applications in a streaming fashion, provided: - The parts are accessed orderly(as they appear in the stream) - The parts are accessed only once. In such situations, the parts need not be written to file system(however large message it is !)</p></div><div class="section"><h2>Sample Usage</h2><div class="source"><pre>// Parts are accessed in order. The data is accessed using readOnce()
@@ -156,7 +45,7 @@ public void testOrder() {
 
     MIMEPart partC = mm.getPart(&quot;partC&quot;);
     InputStream cis = partC.readOnce()
-}</pre></div></div><div class="section"><h2>Implementation</h2><p>MIME message parsing is done using pull-parsing, much similar to <a href="http://www.jcp.org/en/jsr/detail?id=173"><tt>StAX</tt></a> in XML world. The MIMEParts are constructed lazily, and parsing is triggered by applications while reading the attachment parts. MIMEConfig provides various configuration options to control parsing and storing MIME parts. It is also possible to read MIME parts in any order and multiple times, but doing so may create attachment parts on the file system.</p></div>
+}</pre></div></div><div class="section"><h2>Implementation</h2><p>MIME message parsing is done using pull-parsing, much similar to <a href="http://www.jcp.org/en/jsr/detail?id=173"><tt>StAX</tt></a> in XML world. The MIMEParts are constructed lazily, and parsing is triggered by applications while reading the attachment parts. MIMEConfig provides various configuration options to control parsing and storing MIME parts. It is also possible to read MIME parts in any order and multiple times, but doing so may create attachment parts on the file system.</p></div>
       </div>
     </div>
     <div class="clear">
@@ -171,7 +60,7 @@ public void testOrder() {
 
   
   
-  &nbsp;| Last Published: 09/07/2007
+  &nbsp;| Last Published: 09/11/2007
   &nbsp;| Version: 1.1-SNAPSHOT
 </div>
       <div class="clear">
