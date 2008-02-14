@@ -29,7 +29,18 @@
     -->
     <div id="bodyColumn">
       <div id="contentBox">
-        <div class="section"><h2>What is this?</h2><p>This provides a streaming API to access attachments parts in a MIME message. Often times, a large MIME message cannot be loaded into memory. Hence the whole message or attachment parts are written to a file system and access to the attachment parts is provided using those files.</p><p>But in some cases, the attachment parts can be accessed by applications in a streaming fashion, provided: - The parts are accessed orderly(as they appear in the stream) - The parts are accessed only once. In such situations, the parts need not be written to file system(however large message it is !)</p></div><div class="section"><h2>Sample Usage</h2><div class="source"><pre>// Parts are accessed in order. The data is accessed using readOnce()
+        <div class="section"><h2>Project Description</h2><p>This provides a streaming API to access attachments parts in a MIME message. Often times, a large MIME message cannot be loaded into memory. Hence the whole message or attachment parts are written to a file system and access to the attachment parts is provided using those files.</p><p>But in some cases, the attachment parts can be accessed by applications in a streaming fashion, provided: - The parts are accessed orderly(as they appear in the stream) - The parts are accessed only once. In such situations, the parts need not be written to file system(however large message it is !)</p></div>
+
+        <div class="section"><h2>Overview</h2><p>
+        <ul>
+        <li><strong>Status:</strong> Production Quality</li>
+        <li><strong>Licenses:</strong> Dual license consisting of the
+        <a href="https://glassfish.dev.java.net/public/CDDL+GPL.html">
+        CDDL v1.0 and GPL v2</a>.</li>
+        </ul>
+        </p></div>
+
+        <div class="section"><h2>Sample Usage</h2><div class="source"><pre>// Parts are accessed in order. The data is accessed using readOnce()
 // and there shouldn't be any data stored in temp files.
 public void testOrder() {
     InputStream in = ...
