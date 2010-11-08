@@ -1,0 +1,38 @@
+<script>
+var info = {
+	title: "MIME pull",
+	logo: ""
+}
+</script>
+
+	  <div id="navcol">
+	    <dl id="projecttools" class="navgroup" style="text-align: left;">
+	      <dt id="current-zone" class="depth0">
+		<a href="https://glassfish.dev.java.net/">GlassFish Community</a>
+	      </dt>
+	      <dd class="depth0 parent parent" id="menubar">
+<ul id="main-menubar">
+	<li>
+		<a href="/servlets/ProjectDocumentList">Downloads</a>
+	<li>
+		<a href="/servlets/ProjectMemberList">Membership</a>
+	<li>
+		<a href="/servlets/ProjectMailingListList">Mailing lists</a>
+	<li>
+		<a href="/issues/">Issue tracker</a>
+  <li>
+    <form name="ProjectIssuesForm" method="get" action="/issues/show_bug.cgi" style="margin-left:2em">
+      <input type="submit" value="Go to" /> # <input name="id" size="3" />
+    </form>
+	<li>
+		<a href="/source/browse/mimepull/" match="/source/browse/mimepull/.*">SVN repository</a>
+</ul>
+
+<script>
+var info = {
+	title: "MIME pull",
+	logo: ""
+}
+</script>
+<script src="http://glassfish-theming.java.net/zone-ws.js"></script>
+<script src="http://glassfish-theming.java.net/theme.js"></script>
