@@ -78,7 +78,7 @@
 			    |
 			    <a href="https://java.net/people/new">Register</a>
                             |
-                            <a id="joinbutton1" href="http://java.net/projects/grizzly/watch">Join</a>
+                            <a id="joinbutton1" href="http://java.net/projects/mimepull/watch">Join</a>
                             |
                             <a href="http://java.net/projects/help/pages/Home">Help</a>
 		      </div>
@@ -89,7 +89,7 @@
                 |
                 <a href="http://java.net/people/logout">Log out</a>
                             |
-                            <a id="joinbutton2" href="http://java.net/projects/grizzly/watch">Join</a>
+                            <a id="joinbutton2" href="http://java.net/projects/mimepull/watch">Join</a>
                             |
                             <a href="http://java.net/projects/help/pages/Home">Help</a>
               </div>

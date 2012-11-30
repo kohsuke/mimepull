@@ -13,19 +13,18 @@ var info = {
 	      <dd class="depth0 parent parent" id="menubar">
 <ul id="main-menubar">
 	<li>
-		<a href="/servlets/ProjectDocumentList">Downloads</a>
-	<li>
-		<a href="/servlets/ProjectMemberList">Membership</a>
+		<a href="https://maven.java.net/content/repositories/releases/org/jvnet/mimepull/mimepull/">Downloads</a>
+		<a href="http://download.java.net/maven/2/org/jvnet/mimepull/">Older downloads</a>
 	<li>
 		<a href="/servlets/ProjectMailingListList">Mailing lists</a>
 	<li>
-		<a href="/issues/">Issue tracker</a>
+		<a href="http://java.net/jira/browse/MIMEPULL">Issue tracker</a>
   <li>
     <form name="ProjectIssuesForm" method="get" action="/issues/show_bug.cgi" style="margin-left:2em">
       <input type="submit" value="Go to" /> # <input name="id" size="3" />
     </form>
 	<li>
-		<a href="/source/browse/mimepull/" match="/source/browse/mimepull/.*">SVN repository</a>
+		<a href="/sources/svn/show/trunk" match="/source/browse/mimepull/.*">SVN repository</a>
 </ul>
 
 <script>
